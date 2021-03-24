@@ -8,7 +8,7 @@ function App() {
 	const [searchState, setSearchState] = useState();
 
 	useEffect(() => {
-		API.search().then((res) => {
+		API().then((res) => {
 			// console.log(res.data.results);
 			setSearchState(res.data.results);
 		});

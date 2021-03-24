@@ -28,6 +28,7 @@ function EmployeeTable(props) {
 						<form className="search my-3">
 							<div className="form-group">
 								<label htmlFor="language">Search Employees:</label>
+								{/* <Input handleInputChange={handleInputChange} /> */}
 								<input
 									value={search}
 									onChange={handleInputChange}
