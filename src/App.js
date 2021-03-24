@@ -1,9 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarEl from './components/Navbar';
 import EmployeeTable from './components/EmployeeTable';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import API from './utils/API';
 
 function App() {
+	const [SearchState, setSearchState] = useState({
+		results: [],
+	});
+
+	useEffect(() => {
+		API.search().then((res) => {
+			console.log(res);
+		});
+	});
+
 	return (
 		<div className="App">
 			<header className="App-header">
