@@ -1,14 +1,15 @@
 import React from 'react';
 import EmployeeCard from './EmployeeCard';
 
-function EmployeeTable() {
+function EmployeeTable(props) {
+	// console.log(props);
 	return (
 		<>
 			<div className="container">
 				<div className="row">
 					<div className="col-md-10">
 						<h1>Employee Table</h1>
-						<EmployeeCard />
+						<EmployeeCard results={props.results} />
 					</div>
 				</div>
 			</div>

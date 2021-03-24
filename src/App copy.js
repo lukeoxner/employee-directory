@@ -12,7 +12,8 @@ function App() {
 	useEffect(() => {
 		API.search().then((res) => {
 			// console.log(res.data.results);
-			setSearchState(res.data.results);
+			setSearchState({ ...searchState, results: res.data.results });
+			console.log(searchState);
 		});
 	}, []);
 
@@ -20,7 +21,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<NavbarEl />
-				<EmployeeTable results={searchState} />
+				<EmployeeTable />
 			</header>
 		</div>
 	);
