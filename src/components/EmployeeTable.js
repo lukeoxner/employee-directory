@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EmployeeCard from './EmployeeCard';
+import Button from 'react-bootstrap/Button';
 
 function EmployeeTable(props) {
 	// console.log(props);
@@ -14,7 +15,7 @@ function EmployeeTable(props) {
 	return (
 		<>
 			<div className="container">
-				<div className="row">
+				<div className="row justify-content-center">
 					<div className="col-md-10">
 						<form className="search my-3">
 							<div className="form-group">
@@ -31,6 +32,16 @@ function EmployeeTable(props) {
 								/>
 							</div>
 						</form>
+					</div>
+					<div className="row mb-3 justify-content-center">
+						<div className="col-3">
+							<Button variant="dark">Sort Ascending (A to Z)</Button>{' '}
+						</div>
+						<div className="col-3">
+							<Button variant="dark">Sort Descending (Z to A)</Button>{' '}
+						</div>
+					</div>
+					<div className="row">
 						<EmployeeCard results={props.results} search={search} />
 					</div>
 				</div>
