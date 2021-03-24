@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EmployeeCard from './EmployeeCard';
 
 function EmployeeTable(props) {
 	// console.log(props);
+
+	const [search, setSearch] = useState('');
+
+	const handleInputChange = (e) => {
+		setSearch(e.target.value);
+		// console.log(search);
+	};
+
 	return (
 		<>
 			<div className="container">
 				<div className="row">
 					<div className="col-md-10">
-						<form className="search">
+						<form className="search my-3">
 							<div className="form-group">
 								<label htmlFor="language">Search Employees:</label>
 								<input
-									value={props.search}
-									onChange={props.handleInputChange}
+									value={search}
+									onChange={handleInputChange}
 									name="search"
 									list="search"
 									type="text"
@@ -23,7 +31,7 @@ function EmployeeTable(props) {
 								/>
 							</div>
 						</form>
-						<EmployeeCard results={props.results} />
+						<EmployeeCard results={props.results} search={search} />
 					</div>
 				</div>
 			</div>
