@@ -5,9 +5,7 @@ import React, { useState, useEffect } from 'react';
 import API from './utils/API';
 
 function App() {
-	const [searchState, setSearchState] = useState({
-		results: [],
-	});
+	const [searchState, setSearchState] = useState();
 
 	useEffect(() => {
 		API.search().then((res) => {
